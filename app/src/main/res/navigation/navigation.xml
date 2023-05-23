@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mnashat_dev.saveme.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/sendReportFragment"
+        android:name="com.mnashat_dev.saveme.ui.SendReportFragment"
+        android:label="fragment_send_report"
+        tools:layout="@layout/fragment_send_report" />
+    <fragment
+        android:id="@+id/listOfDataFragment"
+        android:name="com.mnashat_dev.saveme.ui.ListOfDataFragment"
+        android:label="fragment_list_of_data"
+        tools:layout="@layout/fragment_list_of_data" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mnashat_dev.saveme.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+</navigation>

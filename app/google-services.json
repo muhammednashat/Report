@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "544286828601",
+    "project_id": "saveme-ad446",
+    "storage_bucket": "saveme-ad446.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544286828601:android:262f121d75198ebd3c05e8",
+        "android_client_info": {
+          "package_name": "com.mnashat_dev.saveme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544286828601-ejg90094suu0s7f8jpeflb0n4jvbe33j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mnashat_dev.saveme",
+            "certificate_hash": "89a36fbed5e57d38cd1fcd419acc7c9970611e1a"
+          }
+        },
+        {
+          "client_id": "544286828601-cr90m75dvf9j20pc3e0vg8ab735cllg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIpJnJG22ebV1cJ_sMEYNil2eqm8z8f5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544286828601-cr90m75dvf9j20pc3e0vg8ab735cllg2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
