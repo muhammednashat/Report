@@ -1,22 +1,24 @@
 package com.mnashat_dev.saveme.data.models
 
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 
 @Entity(tableName = "Reports_table")
 @Parcelize
 data class Report(
-    @PrimaryKey(autoGenerate = true) val id: Long?,
+    @PrimaryKey(autoGenerate = true)
+    val id: Long?,
     val nameOfDoctor: String? = null,
     val fromWhere: String? = null,
     val conditionsOfDeath: String? = null,
     val caseDetails: String? = null,
     val additionalNotes: String? = null,
-    val detailsOfSender: String? = null
+    val detailsOfSender: String? = null,
+    val timingOfSend: String? = null
 ) : Parcelable
 
 
@@ -29,7 +31,9 @@ fun List<ReportForFirebase>.asdomainModel(): List<Report> {
             conditionsOfDeath = it.conditionsOfDeath,
             caseDetails = it.caseDetails,
             additionalNotes = it.additionalNotes,
-            detailsOfSender = it.detailsOfSender
+            detailsOfSender = it.detailsOfSender,
+            timingOfSend = it.timingOfSend
+
         )
     }
 }

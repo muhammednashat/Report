@@ -5,6 +5,13 @@
 
     <data>
 
+        <variable
+            name="report"
+            type="com.mnashat_dev.saveme.data.models.Report" />
+
+        <variable
+            name="clickListener"
+            type="com.mnashat_dev.saveme.listofreports.ReportListener" />
 
     </data>
 
@@ -12,6 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layoutDirection="rtl"
+
         android:background="@color/gray"
 
         tools:context=".ui.MainActivity">
@@ -22,17 +31,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_large"
-            android:text="تقرير مسرح وفاة"
+            android:text="تفاصيل التقرير"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold" />
 
 
-
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,186 +51,144 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:layoutDirection="rtl"
+                    android:layout_marginTop="40dp"
                     android:orientation="vertical"
                     tools:context=".listofreports.ListOfDataFragment">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="@dimen/margin_small"
                         android:layout_marginStart="@dimen/margin_normal"
-                        android:text="اسم الطبيب الشرعى " />
+                        android:layout_marginBottom="4dp"
+                        android:text="اسم الطبيب الشرعى "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
 
-                    <EditText
-                        android:id="@+id/ed_name_doctor"
+                    <TextView
+                        android:id="@+id/tv_name_doctor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal"
-                        android:padding="@dimen/padding_normal"
                         android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginEnd="@dimen/margin_normal"
                         android:background="@drawable/round_shape"
-                        android:hint="ادخل اسم الطبيب الشرعى" />
+                        android:padding="@dimen/padding_normal"
+                        app:nameOfDoctor="@{report}" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:layoutDirection="rtl"
-
+                    android:layout_marginTop="@dimen/margin_normal"
                     android:orientation="vertical"
                     tools:context=".listofreports.ListOfDataFragment">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="@dimen/margin_small"
                         android:layout_marginStart="@dimen/margin_normal"
-                        android:text="جهة الإختصاص" />
+                        android:layout_marginBottom="4dp"
+                        android:text="جهة الإختصاص"
 
-                    <EditText
-                        android:id="@+id/ed_from_where"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <TextView
+                        android:id="@+id/tv_from_where"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal"
-                        android:padding="@dimen/padding_normal"
                         android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginEnd="@dimen/margin_normal"
                         android:background="@drawable/round_shape"
-                        android:hint="العنوان او المركز الأمنى أو الجهة المختصة " />
+
+                        android:padding="@dimen/padding_normal"
+                        app:fromWhere="@{report}" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:layoutDirection="rtl"
-
+                    android:layout_marginTop="@dimen/margin_normal"
                     android:orientation="vertical"
                     tools:context=".listofreports.ListOfDataFragment">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="@dimen/margin_small"
                         android:layout_marginStart="@dimen/margin_normal"
-                        android:text="ظروف الوفاة الأولية " />
+                        android:layout_marginBottom="4dp"
+                        android:text="ظروف الوفاة الأولية "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
 
-                    <EditText
-                        android:id="@+id/ed_conditions_of_death"
+                    <TextView
+                        android:id="@+id/tv_conditions_of_death"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_normal"
                         android:layout_marginEnd="@dimen/margin_normal"
                         android:padding="@dimen/padding_normal"
-                        android:layout_marginStart="@dimen/margin_normal"
                         android:background="@drawable/round_shape"
-                        android:hint="ظروف الوفاة ( جنائية-إنتحار-قتل-سقوط-..الخ)" />
+
+                        app:conditionsOfDeath="@{report}" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:layoutDirection="rtl"
-
+                    android:layout_marginTop="@dimen/margin_normal"
                     android:orientation="vertical"
                     tools:context=".listofreports.ListOfDataFragment">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="@dimen/margin_small"
                         android:layout_marginStart="@dimen/margin_normal"
-                        android:text="تفاصيل الكشف على الحالة" />
+                        android:layout_marginBottom="4dp"
+                        android:text="تفاصيل الكشف على الحالة"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
 
-                    <EditText
-                        android:id="@+id/ed_case_details"
+                    <TextView
+                        android:id="@+id/tv_case_details"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_normal"
                         android:layout_marginEnd="@dimen/margin_normal"
                         android:padding="@dimen/padding_normal"
-                        android:layout_marginStart="@dimen/margin_normal"
                         android:background="@drawable/round_shape"
-                        android:hint="العمروالجنس , المشاهدات الأولية , إصابات من عدمه" />
+
+                        app:caseDetails="@{report}" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:layoutDirection="rtl"
-
+                    android:layout_marginTop="@dimen/margin_normal"
                     android:orientation="vertical"
                     tools:context=".listofreports.ListOfDataFragment">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginBottom="4dp"
+                        android:text="ملاحظات اضافية"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="@dimen/margin_small"
-                        android:layout_marginStart="@dimen/margin_normal"
-                        android:text="ملاحظات اضافية" />
-
-                    <EditText
-                        android:id="@+id/ed_additional_notes"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal"
-                        android:padding="@dimen/padding_normal"
-                        android:layout_marginStart="@dimen/margin_normal"
-                        android:background="@drawable/round_shape"
-                        android:hint="وجود الأداة من عدمه , تم الإستعراف أو تسليم الحالة" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:orientation="vertical"
-                    android:layoutDirection="rtl"
-
-                    tools:context=".listofreports.ListOfDataFragment">
+                        android:textSize="@dimen/text_size_normal" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="@dimen/margin_small"
-                        android:layout_marginStart="@dimen/margin_normal"
-                        android:text="بيانات مرسل التقرير" />
-
-                    <EditText
-                        android:id="@+id/ed_details_of_sender"
+                        android:id="@+id/tv_additional_notes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal"
-                        android:padding="@dimen/padding_normal"
                         android:layout_marginStart="@dimen/margin_normal"
                         android:background="@drawable/round_shape"
-                        android:hint="ادخل اسمك , المسمى الوظيفى " />
+
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:padding="@dimen/padding_normal"
+                        app:additionalNotes="@{report}" />
                 </LinearLayout>
-
-                <Button
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/bt_send_report"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    android:padding="@dimen/padding_small"
-                    android:layout_margin="@dimen/margin_large"
-                    android:textSize="@dimen/text_size_large"
-                    android:text="ارسل التقرير" />
-
             </LinearLayout>
         </ScrollView>
-
-
-        <!--    </androidx.cardview.widget.CardView>-->
 
 
     </LinearLayout>

@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:background="@color/gray"
         android:orientation="vertical"
-
         tools:context=".ui.MainActivity">
 
 
@@ -20,82 +19,110 @@
             android:id="@+id/appCompatImageView2"
             android:layout_width="186dp"
             android:layout_height="202dp"
-            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
             android:src="@drawable/ic_admin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <LinearLayout
-            android:id="@+id/linear_layout_user_name"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="@dimen/margin_normal"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
-            tools:context=".ui.ListOfDataFragment">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginStart="@dimen/margin_normal"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:text="اسم المستخدم"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/ed_user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_shape"
-                android:hint="ادخل اسم المستخدم"
-                android:padding="@dimen/padding_normal"
-                tools:layout_editor_absoluteX="23dp"
-                tools:layout_editor_absoluteY="181dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_normal"
-            android:layout_marginEnd="@dimen/margin_normal"
-            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear_layout_user_name"
-            tools:context=".ui.ListOfDataFragment">
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_normal"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:text="كلمة السر"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/ed_conditions_of_death"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_shape"
-                android:hint="ادخل كلمة السر"
-                android:padding="@dimen/padding_normal"
-                tools:layout_editor_absoluteX="23dp"
-                tools:layout_editor_absoluteY="181dp" />
-
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                android:orientation="vertical"
+                tools:context=".ui.MainActivity">
 
 
+                <LinearLayout
+                    android:id="@+id/linear_layout_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:context=".listofreports.ListOfDataFragment">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        android:text="اسم المستخدم"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/ed_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_shape"
+                        android:hint="ادخل اسم المستخدم"
+                        android:padding="@dimen/padding_normal"
+                        tools:layout_editor_absoluteX="23dp"
+                        tools:layout_editor_absoluteY="181dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_layout_user_name"
+                    tools:context=".listofreports.ListOfDataFragment">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        android:text="كلمة السر"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/ed_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_shape"
+                        android:hint="ادخل كلمة السر"
+                        android:padding="@dimen/padding_normal"
+                        tools:layout_editor_absoluteX="23dp"
+                        tools:layout_editor_absoluteY="181dp" />
+
+                    <Button
+                        android:id="@+id/bt_enter"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin_large"
+                        android:padding="@dimen/padding_small"
+                        android:text="دخول"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_large"
+                        />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

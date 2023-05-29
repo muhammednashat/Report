@@ -14,14 +14,13 @@ interface ReportDao {
     @Query("SELECT * FROM Reports_table")
     fun getAllReports(): LiveData<List<Report>>
 
-
-
-
+    @Query("SELECT * FROM Reports_table ORDER BY id DESC LIMIT 1")
+    fun getLastReport(): Report?
 }
 
 private lateinit var INSTANCE: ReportDatabase
 
-@Database(entities = [Report::class], version = 1, exportSchema = false)
+@Database(entities = [Report::class], version = 3, exportSchema = false)
 abstract class ReportDatabase() : RoomDatabase() {
 
     abstract val reportDao: ReportDao

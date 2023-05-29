@@ -8,5 +8,7 @@ data class ReportForFirebase(
     val conditionsOfDeath: String? = null,
     val caseDetails: String? = null,
     val additionalNotes: String? = null,
-    val detailsOfSender: String? = null
+    val detailsOfSender: String? = null,
+    val timingOfSend: String? = null
+
 )

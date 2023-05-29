@@ -9,7 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="com.mnashat_dev.saveme.ui.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_sendReportFragment"
+            app:destination="@id/sendReportFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sendReportFragment"
         android:name="com.mnashat_dev.saveme.ui.SendReportFragment"
@@ -17,12 +24,29 @@
         tools:layout="@layout/fragment_send_report" />
     <fragment
         android:id="@+id/listOfDataFragment"
-        android:name="com.mnashat_dev.saveme.ui.ListOfDataFragment"
+        android:name="com.mnashat_dev.saveme.listofreports.ListOfDataFragment"
         android:label="fragment_list_of_data"
-        tools:layout="@layout/fragment_list_of_data" />
+        tools:layout="@layout/fragment_list_of_data" >
+        <action
+            android:id="@+id/action_listOfDataFragment_to_displayReportFragment"
+            app:destination="@id/displayReportFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.mnashat_dev.saveme.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_listOfDataFragment"
+            app:destination="@id/listOfDataFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayReportFragment"
+        android:name="com.mnashat_dev.saveme.DisplayReportFragment"
+        android:label="DisplayReportFragment" >
+        <argument
+            android:name="report"
+            app:argType="com.mnashat_dev.saveme.data.models.Report" />
+    </fragment>
 </navigation>
